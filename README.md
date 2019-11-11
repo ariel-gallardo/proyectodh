@@ -8,11 +8,28 @@
 
 ### [Cosas Fundamentales](https://github.com/ariel-gallardo/proyectodh/REQUISITOS.MD)
 
+#### SECCION HEADER ( En General )
+Queremos una barra de navegación con un buscador y una lista con las secciones
+Entonces se me ocurrió esto:
+  * Incluir un logo de la pagina que vaya derecho a la sección home.
+  * Un buscador que va a estar compuesto de un espacio para escribir
+    texto y un botón para lograr buscar.
+  * La imagen de una carta que indique la cantidad de notificaciones,
+      si son mas de 99 que indique con 99+ ubicado en la esquina
+      inferior derecha de la imagen.
+  * Un carrito de compras, y que indique la cantidad de productos.
+  * Una subBarra de navegacion desplegable para dispositivos moviles,
+    ya que si no es movil se lograra ver todo el contenido y
+    contara con los siguientes elementos:
+      * Iniciar Sesión.
+      * Registrarse.
+      * Contacto.
+      * Preguntas Frecuentes.
 ### Seccion Home
 #### (información general del proyecto)
 
-##### SECCION HEADER
-Queremos una barra de navegación con un buscador y una lista con las secciones
+
+
 
 ###### BARRA DE NAVEGACIÓN
 * Logo que se redirige al home.
