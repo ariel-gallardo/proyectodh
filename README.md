@@ -2,9 +2,9 @@
 ## Diseño de E-Commerce
 * Integrantes
  * [Carlos]() - Agregar enlace a cuenta de github
- * [Veronica]() - Agregar enlace a cuenta de github   
- * [German]() - Agregar enlace a cuenta de github     
- * [Ariel](https://github.com/ariel-gallardo/)      
+ * [Veronica](https://github.com/VeronicaRodriguezCenci)
+ * [German](https://github.com/AngelGerman)
+ * [Ariel](https://github.com/ariel-gallardo/)
 
 ### [Cosas Fundamentales](https://github.com/ariel-gallardo/proyectodh/REQUISITOS.MD)
 
