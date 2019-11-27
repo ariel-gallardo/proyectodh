@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/login.css">
     <title>F.A.Q.</title>
   </head>
   <body>
@@ -15,7 +15,7 @@
         <!--Buscador con botón-->
         <div class="form-group">
 
-             <span class="badge"><input class = "border rounded col-12 text-center" type="text" name="articulo"><img src="img/nav/buscar.svg" alt="Lupa" width="25vw"></span>
+             <span class="badge"><input class = "border rounded col-12 text-center" type="text" name="articulo"><img src="/img/nav/buscar.svg" alt="Lupa" width="25vw"></span>
         </div>
       </form>
     </div>

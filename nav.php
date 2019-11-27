@@ -1,15 +1,25 @@
-
-    <div class = "d-flex">
+  <div class = "d-flex">
         <a class = "NavLogo navbar-brand mr-0 nav-link mt-3" href="#">
           <h3>S.M.<img src="img/nav/super.svg" width="40vw" alt="buy"></h3>
           <h6>Digital House</h6>
         </a>
       <ul class = "nav">
         <li class = "nav-item">
-          <a class = "position-relative" href="#">
+           <!-- <a class = "position-relative" href="#"> -->
+           <div class = "modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class = "modal-dialog cascading-modal" role="document">
+              <div class = "modal-content">
+                <?php require_once "usuario/index.php"; ?>
+              </div>
+            </div>
+           </div>
+          <div class="text-center">
+            <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">
               <img src="img/nav/usuario.svg" alt="Perfil" width="40vw">
-              <pre class = "position-absolute py-2 text-white">Bienvenido</pre>
-        </a></li>
+            </a>
+          </div>
+              <!-- <pre class = "position-absolute py-2 text-white">Bienvenido</pre> -->
+        </li>
         <li class = "mr-3 nav-item rounded position-relative">
           <a href="#">
               <img src="img/nav/carro.svg" alt="Carro" width="40vw">

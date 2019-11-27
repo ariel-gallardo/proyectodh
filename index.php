@@ -3,22 +3,19 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/seccion.css">
-    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/seccion.css">
+    <link rel="stylesheet" href="/css/carousel.css">
     <title>Home</title>
   </head>
   <body>
 <!-- Barra de Navegacion -->
-<nav class = "BarraDeNavegacion navbar navbar-expand-lg navbar-dark fixed-top">
-  <?php require_once 'nav.php' ?>
+<nav class = "BarraDeNavegacion navbar navbar-expand-lg navbar-dark">
+  <?php require_once "nav.php" ?>
 </nav>
 <!--CARUSEL - ARTICULO - PAGINACION-->
 <header>
-  <div class = "divisor">
-
-  </div>
   <?php require_once 'categorias.php' ?>
 </header>
 <main>
