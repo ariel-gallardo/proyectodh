@@ -10,9 +10,9 @@
       </div>
       <div class="carousel-item slide2">
         <div class="a_text text-center rounded px-3 pt-3">
-          <img src="/img/pago/ahora12.png" alt="ahora 12" width="100vw">
-          <img src="/img/pago/mastercard.png" alt="Mastercard" width="100vw">
-          <img src="/img/pago/visa.png" alt="Visa" width="100vw">
+          <img src="/integrador/img/pago/ahora12.png" alt="ahora 12" width="100vw">
+          <img src="/integrador/img/pago/mastercard.png" alt="Mastercard" width="100vw">
+          <img src="/integrador/img/pago/visa.png" alt="Visa" width="100vw">
           <p>Abona con los siguientes metodos de pago</p>
         </div>
       </div>
@@ -22,8 +22,8 @@
             <h2>ENVIOS A TODO EL PAIS</h2>
             <p>Trabajamos con los siguientes distribuidores</p>
           </div>
-          <img src="/img/carousel/envios/correoarg.png" alt="Correo Argentino" width="100vw">
-          <img src="/img/carousel/envios/correoand.png" alt="Correo Andreani" width="100vw">
+          <img src="/integrador/img/carousel/envios/correoarg.png" alt="Correo Argentino" width="100vw">
+          <img src="/integrador/img/carousel/envios/correoand.png" alt="Correo Andreani" width="100vw">
         </div>
       </div>
     </div>

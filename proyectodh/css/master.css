@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+body{
+  background-color: black;
+  background-image: url("/img/bg.jpg");
+  font-family: 'Open Sans', sans-serif;
+  color:white;
+}
+
+nav{
+  background-image: url("/img/nav/bg-nav.jpg");
+  background-size: cover;
+  opacity: 0.8;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h5{
+    font-family: 'Bebas Neue', cursive;
+}
+
+<<<<<<< master
+
+
+=======
+>>>>>>> Main terminado, Comenzando profile
+nav img{
+  width: 5vw;
+}
+
+main h3{
+  background-color: rgba(191, 13, 13, 0.6);
+}

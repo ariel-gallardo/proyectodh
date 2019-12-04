@@ -75,7 +75,7 @@
                 <article class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                   <div class="card border rounded mx-auto shadow-lg">
                     <div class="A_img">
-                        <img src="/img/categoria/<?= $categoria."/".$subCategoria."/".$i.".jpg" ?>" width="100%" height="80%">
+                        <img src="/integrador/img/categoria/<?= $categoria."/".$subCategoria."/".$i.".jpg" ?>" width="100%" height="80%">
                     </div>
                     <h2><?= $articulo[0]; ?></h2>
                     <pre class = "text-left mx-auto">Precio: $ARS <?= $articulo[1]; ?><br>Stock: 10</pre>

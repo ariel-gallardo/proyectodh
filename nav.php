@@ -1,6 +1,6 @@
   <div class = "d-flex">
         <a class = "NavLogo navbar-brand mr-0 nav-link mt-3" href="#">
-          <h3>S.M.<img src="img/nav/super.svg" width="40vw" alt="buy"></h3>
+          <h3>S.M.<img src="/integrador/img/nav/super.svg" width="40vw" alt="buy"></h3>
           <h6>Digital House</h6>
         </a>
       <ul class = "nav">
@@ -15,20 +15,20 @@
            </div>
           <div class="text-center">
             <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">
-              <img src="img/nav/usuario.svg" alt="Perfil" width="40vw">
+              <img src="/integrador/img/nav/usuario.svg" alt="Perfil" width="40vw">
             </a>
           </div>
               <!-- <pre class = "position-absolute py-2 text-white">Bienvenido</pre> -->
         </li>
         <li class = "mr-3 nav-item rounded position-relative">
           <a href="#">
-              <img src="img/nav/carro.svg" alt="Carro" width="40vw">
+              <img src="/integrador/img/nav/carro.svg" alt="Carro" width="40vw">
               <span class = "badge badge-primary position-absolute mt-4">0</span>
           </a>
         </li>
         <li class = "nav-item rounded position-relative">
           <a href="#">
-              <img src="img/nav/notificacion.svg" alt="Carro" width="40vw">
+              <img src="/integrador/img/nav/notificacion.svg" alt="Carro" width="40vw">
               <span class = "badge badge-primary position-absolute mt-4">0</span>
           </a>
         </li>
