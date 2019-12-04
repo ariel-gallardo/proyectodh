@@ -4,7 +4,7 @@
   }else{
     $nombre = "Login";
     $registros = [
-        ["tipo" =>     "text", "nombre" =>     "Correo", "mensaje" => "Correo@Email.com"],
+        ["tipo" =>     "email", "nombre" =>     "Correo", "mensaje" => "Correo@Email.com"],
         ["tipo" => "password", "nombre" =>  "Confirmar", "mensaje" =>         "********"]
     ];
     include "modalForm.php";
