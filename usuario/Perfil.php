@@ -1,13 +1,9 @@
 <?php
-  $usuario = getUsuario(getUsuario($_GET ? $_GET["Correo"] : $_POST["Correo"]), getDB());
+  $db = getDB();
+  $usuario = getUsuario($_GET ? $_GET["Correo"] : $_POST["Correo"], $db );
+  $seleccion = [];
+  if (isset($usuario)) {
+    echo "Hello";
+    include "modalForm.php";
+  } else { echo "<h1>No existe el perfil seleccionado</h1>"};
 ?>
-
-<?php if (isset($usuario)) {?>
-
-  <div class="col-4">
-    <img src="img/<?= $usuario["Correo"] ?>.jpg" alt="" style="height:100%; width: 100%;">
-  </div>
-
-<?php include "modalForm.php";} else {
-        echo "<h1>No existe el perfil seleccionado</h1>";
-} ?>

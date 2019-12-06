@@ -1,4 +1,4 @@
-<form id="Formulario" method = "POST" action = "<?php echo "/integrador\/" ?>">
+<form id="Formulario" method = "POST" action = "./">
     <div class="modal-body">
         <?php foreach ((isset($seleccion) ? $seleccion : $registros) as $registro): ?>
         <div class="md-form col-12 text-center align-items-center">

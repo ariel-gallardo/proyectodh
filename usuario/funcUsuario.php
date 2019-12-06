@@ -1,10 +1,10 @@
 <?php
 function getDB(){
-  return json_decode(file_get_contents("../db/usuarios.json"), true);
+  return json_decode(file_get_contents("./db/usuarios.json"),true);
 }
 
 function setDB($usuarios){
-  file_put_contents("../db/usuarios.json", json_encode($usuarios));
+  file_put_contents("./db/usuarios.json", json_encode($usuarios));
 }
 
 function generarUsuario(){
@@ -35,7 +35,7 @@ function registrarUsuario($nuevoUsuario){
   }
   $usuarios[] = $nuevoUsuario;
     setDB($usuarios);
-    file_put_contents("../db/usuarios.txt","\n".$nuevoUsuario["Correo"]);
+    file_put_contents("./db/usuarios.txt",file_get_contents("./db/usuarios.txt")."\n".$nuevoUsuario["Correo"]);
   return true;
 }
 
