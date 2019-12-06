@@ -3,10 +3,15 @@
   include_once "varUsuario.php";
   include_once "funcUsuario.php";
 
-  $logueado = false;
+  session_start();
 
-  if(!$logueado){
-      include_once 'modalBody.php';
+  if(isset($_SESSION["formulario"])){ //!isset($_SESSION["formulario"])
+    if(!$_SESSION["formulario"]){
+    }else{
+      include_once "Perfil.php";
+    }
+  }else{
+    include_once 'modalBody.php';
   }
 
 

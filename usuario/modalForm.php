@@ -1,8 +1,9 @@
-<form id="Formulario" method = "POST" action = "<?php echo "/" ?>">
+<form id="Formulario" method = "POST" action = "<?php echo "/integrador\/" ?>">
     <div class="modal-body">
         <?php foreach ((isset($seleccion) ? $seleccion : $registros) as $registro): ?>
-        <div class="md-form col-12 text-center">
-          <input class="<?= $registro["nombre"] ?> form-control validate text-center col-6 mx-auto my-2" type="<?= $registro["tipo"]; ?>" placeholder="<?= $registro["mensaje"]; ?>" name = "<?= $registro[$nombre]["nombre"] ?>" required>
+        <div class="md-form col-12 text-center align-items-center">
+          <span><?= $registro["nombre"] ?></span>
+          <input class="<?= $registro["bootstrap"] ?> form-control validate text-center justify-content-center col-6 mx-auto my-2" type="<?= $registro["tipo"]; ?>" name = "<?= $registro["nombre"] ?>" required >
         </div>
     <?php endforeach; ?>
     </div>

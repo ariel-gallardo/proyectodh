@@ -1,6 +1,6 @@
 <?php
 function getDB(){
-  return json_decode(file_get_contents("../db/usuarios.json"));
+  return json_decode(file_get_contents("../db/usuarios.json"), true);
 }
 
 function setDB($usuarios){
@@ -17,10 +17,12 @@ function generarUsuario(){
   ];
 }
 
-function existeUsuario($usuario, $usuarios){
-  foreach ($usuarios as $usuario) {
-    if($usuario["Correo"] == $nuevoUsuario["Correo"]){
-      return true;
+function existeUsuario($nuevoUsuario, $usuarios){
+  if(isset($usuarios)){
+    foreach ($usuarios as $usuario) {
+      if($usuario["Correo"] == $nuevoUsuario["Correo"]){
+        return true;
+      }
     }
   }
   return false;
@@ -28,13 +30,13 @@ function existeUsuario($usuario, $usuarios){
 
 function registrarUsuario($nuevoUsuario){
   $usuarios = getDB();
-  if(!existeUsuario($nuevoUsuario,$usuarios)){
-    $usuarios[] = $nuevoUsuario;
+  if(existeUsuario($nuevoUsuario,$usuarios)){
+    return false;
+  }
+  $usuarios[] = $nuevoUsuario;
     setDB($usuarios);
     file_put_contents("../db/usuarios.txt","\n".$nuevoUsuario["Correo"]);
-    return true;
-  }
-  return false;
+  return true;
 }
 
 function switchModal(){
@@ -43,6 +45,15 @@ function switchModal(){
   }else{
     return $registros;
   }
+}
+
+function getUsuario($correo, $db){
+  foreach ($db as $usuario) {
+    if($usuario["Correo"] == $correo){
+      return $usuario;
+    }
+  }
+  return null;
 }
 
 ?>

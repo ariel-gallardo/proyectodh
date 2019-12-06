@@ -6,9 +6,12 @@
     if($_POST){
       $tempUsuario = generarUsuario();
       if($tempUsuario["Password"] == $_POST["Confirmar"]){
-        $db = file_get_contents("../db/usuarios.txt");
         if(registrarUsuario($tempUsuario)){
-          echo "Usuario Registrado";
+          session_start();
+          $_SESSION["formulario"] = true;
+          echo "<script> alert(\" a sido registrado.\") </script>";
+        }else{
+          echo "<script> alert(\" No se pudo registrar.\") </script>";
         }
       }
       else{
