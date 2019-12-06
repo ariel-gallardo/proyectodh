@@ -3,20 +3,37 @@
   $nombre = "Registro";
   $seleccion = NULL;
 
+//////// FALTA ARREGLAR LOS CONDICIONALES PARA QUE PASE SI NO TIENE ERRORES EN EL ARRAY $ERRORES
     if($_POST){
-      $tempUsuario = generarUsuario();
-      if($tempUsuario["Password"] == $_POST["Confirmar"]){
+    if(count($errores) == 0){
+
+
+      if(igualesPass($_POST["Password"] ,$_POST["Confirmar"])) {
+          $errores [] = "Las contraseñas no coinciden";
+        }
+      foreach ($_POST as $valor) {
+        if(!minMax(3,15,$valor)){
+          $errores [] = "Ingresa un valor entre 3 y 15 caracteres";
+        }
+      }
+
+
+    if(esMail($POST["Correo"])){
+      $errores [] = "Ingresa una dirección de correo válida";
+    }
+    if(esNulo($POST["Nombre"],$POST["Apellido"],$POST["Documento"],
+    $POST["Correo"],$POST["Password"],$POST["Confirmar"])){
+      $errores = "Por favor, complete todos los campos";
+    }
+
         if(registrarUsuario($tempUsuario)){
           session_start();
           $_SESSION["formulario"] = true;
-          echo "<script> alert(\" a sido registrado.\") </script>";
+          echo "<script> alert(\" Ha sido registrado.\") </script>";
         }else{
-          echo "<script> alert(\" No se pudo registrar.\") </script>";
+          $errores[] = "Ya existe una cuenta registrada con ese email";
         }
-      }
-      else{
-        echo "Las contraseñas no coinciden";
-      }
+
     }else{
       include "modalForm.php";
     }

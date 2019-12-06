@@ -16,18 +16,6 @@ function generarUsuario(){
     "Correo" => $_POST["Correo"]
   ];
 }
-
-function existeUsuario($nuevoUsuario, $usuarios){
-  if(isset($usuarios)){
-    foreach ($usuarios as $usuario) {
-      if($usuario["Correo"] == $nuevoUsuario["Correo"]){
-        return true;
-      }
-    }
-  }
-  return false;
-}
-
 function registrarUsuario($nuevoUsuario){
   $usuarios = getDB();
   if(existeUsuario($nuevoUsuario,$usuarios)){
@@ -56,4 +44,64 @@ function getUsuario($correo, $db){
   return null;
 }
 
+/// FUNCIONES DE VALIDACION DEL LADO SERVIDOR
+
+function igualesPass($pass1,$pass2){
+  if (strncmp($pass1,$pass2,15) !== 0){
+    return false;
+  }else {
+    return true;
+  }
+}
+function minMax($min,$max,$valor){
+ if (strlen(trim($valor) >= $min) && strlen(trim($valor) <= $max) ){
+   return true;
+ }else{
+   return false;
+ }
+
+}
+function existeUsuario($nuevoUsuario, $usuarios){
+  if(isset($usuarios)){
+    foreach ($usuarios as $usuario) {
+      if($usuario["Correo"] == $nuevoUsuario["Correo"]){
+        return true;
+      }
+    }
+  }
+  return false;
+}
+function esMail($correo){
+  if(filter_var($correo, FILTER_VALIDATE_EMAIL)){
+    return true;
+  }else{
+    return false;
+  }
+}
+function esNulo($Nombre,$Apellido,$Documento,$Correo,$Password){
+  if(strlen(trim($Nombre)) < 1 || strlen(trim($Apellido)) <1 ||
+  strlen(trim($Documento)) < 1 || strlen(trim($Correo)) < 1 ||
+  strlen(trim($Password)) < 1 ) {
+    return true;
+  }else{
+    return false;
+  }
+}
+// FUNCION PASSWORD_HASH
+function passHash($pass){
+  $hash = PASSWORD_HASH($pass, PASSWORD_DEFAULT);
+  return $hash;
+
+}
+/// FUNCION MOSTRAR ERRORES
+function mostrarErrores($errores){
+  if(count($errores) > 0 ) {
+    echo "<div> <ul> ";
+    foreach ($errores as $error) {
+      echo "<li>".$error."</li>";
+  }
+  echo "</ul>";
+  echo "</div>";
+}
+}
 ?>

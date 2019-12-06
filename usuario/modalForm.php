@@ -1,4 +1,4 @@
-<form id="Formulario" method = "POST" action = "./">
+<form id="Formulario" method = "POST" action = "usuario/registro.php">
     <div class="modal-body">
         <?php foreach ((isset($seleccion) ? $seleccion : $registros) as $registro): ?>
         <div class="md-form col-12 text-center align-items-center">
@@ -14,3 +14,6 @@
         </div>
     </div>
 </form>
+<?php
+$errores = [];
+echo mostrarErrores($errores); ?>
