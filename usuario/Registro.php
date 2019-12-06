@@ -1,41 +1,31 @@
 <?php
-
   $nombre = "Registro";
   $seleccion = NULL;
 
-//////// FALTA ARREGLAR LOS CONDICIONALES PARA QUE PASE SI NO TIENE ERRORES EN EL ARRAY $ERRORES
-    if($_POST){
-    if(count($errores) == 0){
-
-
-      if(igualesPass($_POST["Password"] ,$_POST["Confirmar"])) {
-          $errores [] = "Las contraseñas no coinciden";
-        }
+  if($_POST){
+    session_start();
+      if(!igualesPass($_POST["Password"] ,$_POST["Confirmar"])) {
+        $_SESSION["errores"]["Password"] = "Las contraseñas no coinciden";
+      }
       foreach ($_POST as $valor) {
         if(!minMax(3,15,$valor)){
-          $errores [] = "Ingresa un valor entre 3 y 15 caracteres";
+          $_SESSION["errores"]["Password"] = "Ingresa un valor entre 3 y 15 caracteres";
         }
       }
-
-
-    if(esMail($POST["Correo"])){
-      $errores [] = "Ingresa una dirección de correo válida";
-    }
-    if(esNulo($POST["Nombre"],$POST["Apellido"],$POST["Documento"],
-    $POST["Correo"],$POST["Password"],$POST["Confirmar"])){
-      $errores = "Por favor, complete todos los campos";
-    }
-
+      if(!esMail($_POST["Correo"])){
+        $_SESSION["errores"]["Correo"] = "Ingresa una dirección de correo válida";
+      }
+      if(count($_SESSION["errores"]) == 0){
         if(registrarUsuario($tempUsuario)){
-          session_start();
-          $_SESSION["formulario"] = true;
-          echo "<script> alert(\" Ha sido registrado.\") </script>";
+          $_SESSION["formulario"] = true;                                       // Se completo el formulario sin errores.
+          echo "<script> alert(\" Ha sido registrado.\"); </script>";
         }else{
-          $errores[] = "Ya existe una cuenta registrada con ese email";
+          echo "<script> alert(\" Ya existe esa cuenta.\"); </script>";
         }
-
+      }else{
+        $_SESSION["formulario"] = false;                                        // El formulario tiene errores.
+      }
     }else{
       include "modalForm.php";
     }
-
 ?>
