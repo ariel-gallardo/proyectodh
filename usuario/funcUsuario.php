@@ -16,12 +16,11 @@ function generarUsuario(){
     "Correo" => $_POST["Correo"]
   ];
 }
-function registrarUsuario($nuevoUsuario){
-  $usuarios = getDB();
-  if(existeUsuario($nuevoUsuario,$usuarios)){
+function registrarUsuario(){
+  if(existeUsuario(generarUsuario())){
     return false;
   }
-  $usuarios[] = $nuevoUsuario;
+  $usuarios[] = generarUsuario();
     setDB($usuarios);
     file_put_contents("./db/usuarios.txt",file_get_contents("./db/usuarios.txt")."\n".$nuevoUsuario["Correo"]);
   return true;
@@ -62,9 +61,12 @@ function minMax($min,$max,$valor){
  }
 
 }
-function existeUsuario($nuevoUsuario, $usuarios){
+function existeUsuario($nuevoUsuario){ //Array Datos Usuario // Array Usuarios
+    $usuarios = getDB();
     foreach ($usuarios as $usuario) {
       if($usuario["Correo"] == $nuevoUsuario["Correo"]){
+        echo $nuevoUsuario["Correo"];
+        var_dump($nuevoUsuario["Correo"]);
         return true;
       }
   }
@@ -82,10 +84,14 @@ function esMail($correo){
 function passHash($pass){
   $hash = PASSWORD_HASH($pass, PASSWORD_DEFAULT);
   return $hash;
-
 }
+
 /// FUNCION MOSTRAR ERRORES
 function mostrarErrores($registro){
-  return $_SESSION["errores"][$registro];
+  if(isset($_SESSION["errores"][$registro]))
+  {
+    return $_SESSION["errores"][$registro];
+  }
+  return "";
 }
 ?>
