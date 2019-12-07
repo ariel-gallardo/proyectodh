@@ -26,8 +26,6 @@ $data = json_decode(file_get_contents("./data.json"), true);
                 </tr>
             </thead>
             <tbody>
-
-
                 <?php foreach ($data["usuarios"] as $value) { ?>
                     <tr>
                         <td><a href="perfil.php?email=<?= $value["email"] ?>"><?= $value["email"] ?></a></td>

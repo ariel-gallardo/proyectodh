@@ -1,5 +1,5 @@
   <div class = "d-flex">
-        <a class = "NavLogo navbar-brand mr-0 nav-link mt-3" href="#">
+        <a class = "NavLogo navbar-brand mx-0 nav-link mt-3 pl-1" href="#">
           <h3>S.M.<img src="/integrador/img/nav/super.svg" width="40vw" alt="buy"></h3>
           <h6>Digital House</h6>
         </a>
@@ -20,7 +20,7 @@
           </div>
               <!-- <pre class = "position-absolute py-2 text-white">Bienvenido</pre> -->
         </li>
-        <li class = "mr-3 nav-item rounded position-relative">
+        <li class = "nav-item mr-3 rounded position-relative">
           <a href="#">
               <img src="/integrador/img/nav/carro.svg" alt="Carro" width="40vw">
               <span class = "badge badge-primary position-absolute mt-4">0</span>
@@ -40,7 +40,7 @@
     </div>
 <!-- Lista Menu Acortable -->
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="navbar-nav mr-auto ml-lg-5">
+<ul class="navbar-nav pl-md-2 mr-auto ml-lg-5">
   <li class="nav-item active">
     <a class="nav-link" href="#">Home</a>
   </li>
@@ -68,6 +68,6 @@
       </div>
       <!--Buscador con botón-->
       <input class = "border col-5 col-md-6 col-lg-8 px-md-0 text-center" type="text" name="articulo" placeholder=" Articulo ID/Nombre">
-      <button class = "btn col-1 py-0" type="submit"><img src="img/nav/buscar.svg" alt="Lupa" width="25vw"></button>
+      <button class = "btn col-1 py-0" type="submit"><img src="/integrador/img/nav/buscar.svg" alt="Lupa" width="25vw"></button>
     </form>
   </div>
