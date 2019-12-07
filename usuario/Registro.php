@@ -1,4 +1,18 @@
 <?php
+
+  function verificarPassword($Password,$Confirmar){
+    if(!minMax(3,15,$Password)){
+        $_SESSION["errores"]["Password"] = "Entre 3 y 15 caracteres";
+    }
+    if(!minMax(3,15,$Confirmar)){
+        $_SESSION["errores"]["Password"] = "Entre 3 y 15 caracteres";
+    }
+    if(!igualesPass($Password ,$Confirmar)){
+      $_SESSION["errores"]["Password"] = "No coincide con la verificacion";
+      $_SESSION["errores"]["Confirmar"] = "No coincide con la contraseña";
+    }
+  }
+
   session_destroy();
   session_start();
   $nombre = "Registro";
@@ -6,25 +20,19 @@
 
   if($_POST){
     session_start();
-      if(!igualesPass($_POST["Password"] ,$_POST["Confirmar"])) {
-        $_SESSION["errores"]["Password"] = "Las contraseñas no coinciden";
-        /*if(!minMax(3,15,$_POST["Password"])){
-            $_SESSION["errores"]["Password"] = "Ingresa un valor entre 3 y 15 caracteres";
-        }*/
-      }
+      verificarPassword($_POST["Password"],$_POST["Confirmar"]);
       if(!esMail($_POST["Correo"])){
-        $_SESSION["errores"]["Correo"] = "Ingresa una dirección de correo válida";
+        $_SESSION["errores"]["Correo"] = "Correo inválido";
       }
       if(count($_SESSION["errores"]) == 0){
         if(registrarUsuario()){
-          $_SESSION["formulario"] = true;                                       // Se completo el formulario sin errores.
+          $_SESSION["formulario"] = true;
           echo "<script> alert(\" Ha sido registrado.\"); </script>";
-          //
         }else{
           echo "<script> alert(\" Ya existe esa cuenta.\"); </script>";
         }
       }else{
-        $_SESSION["formulario"] = false;                                        // El formulario tiene errores.
+        $_SESSION["formulario"] = false;
       }
     }else{
       include "modalForm.php";

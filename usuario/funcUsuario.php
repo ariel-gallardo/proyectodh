@@ -12,15 +12,18 @@ function generarUsuario(){
     "Nombre" => $_POST["Nombre"],
     "Apellido" => $_POST["Apellido"],
     "Documento" => $_POST["Documento"],
-    "Password" => $_POST["Password"],
+    "Password" => passHash($_POST["Password"]),
     "Correo" => $_POST["Correo"]
   ];
 }
+
 function registrarUsuario(){
-  if(existeUsuario(generarUsuario())){
+  $usuarios = getDB();
+  $nuevoUsuario = generarUsuario();
+  if(existeUsuario($nuevoUsuario,$usuarios)){
     return false;
   }
-  $usuarios[] = generarUsuario();
+  $usuarios[] = $nuevoUsuario;
     setDB($usuarios);
     file_put_contents("./db/usuarios.txt",file_get_contents("./db/usuarios.txt")."\n".$nuevoUsuario["Correo"]);
   return true;
@@ -46,27 +49,25 @@ function getUsuario($correo, $db){
 /// FUNCIONES DE integrador DEL LADO SERVIDOR
 
 function igualesPass($pass1,$pass2){
-  if (strncmp($pass1,$pass2,15) !== 0){
+  if (strncmp($pass1,$pass2,15) != 0){
     return false;
-  }else {
+  }else{
     return true;
   }
 }
 
 function minMax($min,$max,$valor){
- if (strlen(trim($valor) >= $min) && strlen(trim($valor) <= $max) ){
+ if (strlen(trim($valor)) >= $min && strlen(trim($valor)) <= $max){
    return true;
  }else{
    return false;
  }
-
 }
-function existeUsuario($nuevoUsuario){ //Array Datos Usuario // Array Usuarios
-    $usuarios = getDB();
+
+function existeUsuario($nuevoUsuario, $dB){
+    $usuarios = $dB;
     foreach ($usuarios as $usuario) {
       if($usuario["Correo"] == $nuevoUsuario["Correo"]){
-        echo $nuevoUsuario["Correo"];
-        var_dump($nuevoUsuario["Correo"]);
         return true;
       }
   }
@@ -80,6 +81,7 @@ function esMail($correo){
     return false;
   }
 }
+
 // FUNCION PASSWORD_HASH
 function passHash($pass){
   $hash = PASSWORD_HASH($pass, PASSWORD_DEFAULT);
