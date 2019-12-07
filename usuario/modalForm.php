@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <form id="Formulario" method = "POST" action = "./">
     <div class="modal-body">
         <?php foreach ((isset($seleccion) ? $seleccion : $registros) as $registro): ?>

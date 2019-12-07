@@ -7,7 +7,7 @@
   include_once 'modalBody.php';
   if(isset($_SESSION["formulario"])){
 
-    if(!$_SESSION["formulario"]){                                               //El formulario tiene errores
+    if(!$_SESSION["formulario"]){                                               
 
       echo "<script> $(function() {  $('#modalLoginForm').modal('show'); }); </script>";
       include_once "modalForm.php";
