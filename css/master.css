@@ -1,9 +1,0 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Work+Sans:700&display=swap');
-body{
-  background-color: rgba(47, 54, 64,1.0);
-  background-image: url(/img/fondo.jpg);
-}
-
-pre{
-  font-family: 'Open Sans', sans-serif;
-}
