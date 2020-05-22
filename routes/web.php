@@ -16,19 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('principal');
 });
-
-Route::get('/nav',function(){
-    return view('nav');
-});
-
-Route::get('/header',function(){
-    return view('header');
-});
-
-Route::get('/main',function(){
-    return view('main');
-});
-
-Route::get('/footer',function(){
-    return view('footer');
-});
